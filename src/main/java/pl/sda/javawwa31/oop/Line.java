@@ -14,16 +14,16 @@ getLength():double
 //Cwiczenie #2
 public class Line {
 
-    private Point begin, end;
+    private Point2D begin, end;
 
-    public Line(Point begin, Point end) {
+    public Line(Point2D begin, Point2D end) {
         this.begin = begin;
         this.end = end;
     }
 
     public Line(int x1, int y1, int x2, int y2) {   //new Line(1, 2, 3, 4)
-        this.begin = new Point(x1, y1);
-        this.end = new Point(x2, y2);
+        this.begin = new Point2D(x1, y1);
+        this.end = new Point2D(x2, y2);
     }
 
     public int getBeginX() {
@@ -42,7 +42,7 @@ public class Line {
         return this.begin.getXY();
     }
 
-    public Point getBegin() {
+    public Point2D getBegin() {
         return this.begin;
     }
 
@@ -57,7 +57,7 @@ public class Line {
         return this.begin.distance(this.end);
     }
 
-    public Point getEnd() {
+    public Point2D getEnd() {
         return this.end;
     }
 }

@@ -1,17 +1,17 @@
 package pl.sda.javawwa31.oop;
 
 //Cwiczenie #1
-public class Point {    //extends java.lang.Object
+public class Point2D {    //extends java.lang.Object
 
-    private int x, y;   //0
+    protected int x, y;   //0
 
     //Alt+Insert -> Generate
-    public Point(int x, int y) {
+    public Point2D(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public Point() {}
+    public Point2D() {}
 
     @Override
     public String toString() {
@@ -42,7 +42,7 @@ public class Point {    //extends java.lang.Object
     }
 
     //this - another
-    public double distance(Point another) {
+    public double distance(Point2D another) {
         return distance(another.x, another.y);
     }
 
