@@ -15,7 +15,7 @@ public class Runner {
     }*/
 
     //Ex 2
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Point p1 = new Point(); //0,0
         Point p2 = new Point(5, 10);
         Line l1 = new Line(p1, p2);
@@ -23,6 +23,12 @@ public class Runner {
 
         System.out.println("Dlugosc odcinka L1 wynosi: " + l1.getLength() + ". Jego parametry to: " + l1);
         System.out.println("Dlugosc odcinka L2 wynosi: " + l2.getLength() + ". Jego parametry to: " + l2);
+    }*/
+
+    public static void main(String[] args) {
+        Rectangle r1 = new Rectangle(5, 10, "niebieski");
+
+        System.out.println(r1);
     }
 
 }
