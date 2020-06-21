@@ -27,8 +27,16 @@ public class Runner {
 
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(5, 10, "niebieski");
-
         System.out.println(r1);
+
+        Triangle t1 = new Triangle(5, 10, "żółty");
+        System.out.println(t1);
+
+        //rodzic jako klasa wiekszego agregatu; polimorfizm
+        Shape[] shapes = {r1, t1, new Triangle(10, 12, "zielony")};
+        for(Shape s : shapes)
+            System.out.println(s);
+
     }
 
 }
