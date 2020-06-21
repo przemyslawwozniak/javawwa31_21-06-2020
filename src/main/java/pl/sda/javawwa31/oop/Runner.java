@@ -41,7 +41,7 @@ public class Runner {
     }*/
 
     //zadaniapdf/zad3
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Point3DNoPlane p3dnp = new Point3DNoPlane();
         Point3DNoPlane p3dnp2 = new Point3DNoPlane(5, 10, 15);
 
@@ -65,8 +65,53 @@ public class Runner {
         System.out.println("Odl p3dnp na plaszczyznie od (0, 0): " + p3dwp.distance());
         System.out.println("Odl p3dnp na plaszczyznie od (5, 10): " + p3dwp.distance(5, 10));
         System.out.println("Odl p3dnp na plaszczyznie od p3dnp2: " + p3dwp.distance(p3dnp2));
+    }*/
 
+    //zadaniapdf/zad4
+    public static void main(String[] args) {
+        MovablePoint mp = new MovablePoint();
+        MovablePoint mp1 = new MovablePoint(10, 0);
+        MovablePoint mp2 = new MovablePoint(0, 10);
+        MovablePoint mp3 = new MovablePoint(10, 10);
 
+        /*testMovableObject(mp);
+        testMovableObject(mp1);
+        testMovableObject(mp2);
+        testMovableObject(mp3);*/
+
+        MovablePoint mps = new MovablePoint(0, 0, 5, 5);
+        MovablePoint mps1 = new MovablePoint(10, 0, 3, 8);
+        MovablePoint mps2 = new MovablePoint(0, 10, 7, 10);
+        MovablePoint mps3 = new MovablePoint(10, 10, 10, -100);
+
+        /*testMovableObject(mps);
+        testMovableObject(mps1);
+        testMovableObject(mps2);
+        testMovableObject(mps3);*/
+
+        //MovableRectangle
+        System.out.println(mps);
+        MovableRectangle mr = new MovableRectangle(mps, mps1, mps2, mps3, 2, 2);
+
+        //zmieniam wartosci pol referowanych obiektow
+        mps.setxSpeed(5);
+        mps.setySpeed(5);
+
+        testMovableObject(mr);
+
+    }
+
+    private static void testMovableObject(Movable mp) {
+        System.out.println("mp: " + mp);
+        mp.moveRight();
+        System.out.println("mp -> moveRight: " + mp);
+        mp.moveUp();
+        System.out.println("mp -> moveRight -> moveUp: " + mp);
+        mp.moveLeft();
+        System.out.println("mp -> moveRight -> moveUp -> moveLeft: " + mp);
+        mp.moveDown();
+        System.out.println("mp -> moveRight -> moveUp -> moveLeft -> moveDown: " + mp);
+        System.out.println("# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ");
     }
 
 }
