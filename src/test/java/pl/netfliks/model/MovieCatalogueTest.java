@@ -1,10 +1,10 @@
 package pl.netfliks.model;
 
-import com.sun.tools.javac.jvm.Gen;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class MovieCatalogueTest {
 
@@ -38,6 +38,18 @@ public class MovieCatalogueTest {
                 .hasFieldOrPropertyWithValue("releaseDate", LocalDate.of(1999, 2, 8))
                 .hasFieldOrPropertyWithValue("desc", "Polski film historyczny z 1999 roku, w reżyserii Jerzego Hoffmana, na podstawie powieści Henryka Sienkiewicza pod tym samym tytułem.")
         .as("Tekst nie został poprawnie zmapowany na instancję Movie.");
+    }
+
+    @Test
+    public void read_catalogue() {
+        //given
+
+        //when
+        List<Movie> movies = MovieCatalogue.getInstance().getMovies();
+
+        //then
+        Assertions.assertThat(movies).hasSize(10)
+                .as("Catalogue was not property loaded!");
     }
 
 }
