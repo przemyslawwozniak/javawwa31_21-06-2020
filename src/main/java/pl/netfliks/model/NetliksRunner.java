@@ -4,6 +4,7 @@ public class NetliksRunner {
 
     public static void main(String[] args) {
         CUI.getInstance().showAllMovies(MovieCatalogue.getInstance().getMovies());
+        MovieCatalogue.getInstance().getFirstResourceLine();
     }
 
 }

@@ -1,8 +1,12 @@
 package pl.netfliks.model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 //singleton pattern
 public class MovieCatalogue {
@@ -74,7 +78,26 @@ public class MovieCatalogue {
 
     }
 
+    //default scope - package scope
+    String getFirstResourceLine() {
+        File file = new File("C:\\Users\\przwo\\Desktop\\movie_catalogue.txt");
+        try {
+            Scanner sc = new Scanner(file);
+            if(sc.hasNextLine()){
+                return sc.nextLine();
+            }
+        }
+        catch(FileNotFoundException ex) {
+            System.err.println("Wrong file path!");
+        }
+        return null;
+    }
+
     public List<Movie> getMovies() {
         return movies;
+    }
+
+    Movie toMovie(String resourceLine) {
+        
     }
 }
