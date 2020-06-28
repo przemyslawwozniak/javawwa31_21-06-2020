@@ -7,7 +7,7 @@ public class BigLetterValidator extends CharacterValidator implements Valideable
 
     private static List<Integer> asciiCodes;
 
-    {
+    static {
         Integer[] codes = intRange(65, 90);
         asciiCodes = Arrays.asList(codes);
     }

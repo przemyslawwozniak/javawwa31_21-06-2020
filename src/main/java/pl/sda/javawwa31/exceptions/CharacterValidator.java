@@ -21,7 +21,7 @@ public class CharacterValidator implements Valideable {
     protected boolean containsCharacters(String pswd) {
         boolean pswdContainsAnyOfSpecifiedChars = false;
         for(char c : pswd.toCharArray()) {
-            if(asciiCodes.contains(Character.getNumericValue(c))) {
+            if(asciiCodes.contains((int) c)) {
                 pswdContainsAnyOfSpecifiedChars = true;
                 break;
             }

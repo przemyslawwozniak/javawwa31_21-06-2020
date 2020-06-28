@@ -7,7 +7,7 @@ public class SmallLetterValidator extends CharacterValidator implements Valideab
 
     private static List<Integer> asciiCodes;
 
-    {
+    static {
         Integer[] codes = intRange(97, 122);
         asciiCodes = Arrays.asList(codes);
     }
