@@ -20,4 +20,37 @@ public class User {
         this.children = children;
     }
 
+    @Override
+    public String toString() {
+        return name + " " + lastName + ": {" +
+                "brithday=" + brithday +
+                ", salary=" + salary +
+                ", cs=" + cs +
+                ", children=" + children +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public LocalDate getBrithday() {
+        return brithday;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public CivicState getCs() {
+        return cs;
+    }
+
+    public int getChildren() {
+        return children;
+    }
 }
