@@ -11,7 +11,7 @@ import java.util.Scanner;
 //singleton pattern
 public class MovieCatalogue {
 
-    private List<Movie> movies = new ArrayList<>();
+    private List<Movie> movies;
 
     //utworzenie jedynej instancji w programie
     private static final MovieCatalogue INSTANCE = new MovieCatalogue();
@@ -46,6 +46,7 @@ public class MovieCatalogue {
     }
 
     void loadMovies() {
+        movies = new ArrayList<>(); //czysci pamiec katalogu filmow
         File file = new File("C:\\Users\\przwo\\Desktop\\movie_catalogue.txt");
         try {
             Scanner sc = new Scanner(file);
@@ -77,5 +78,40 @@ public class MovieCatalogue {
         int month = Integer.parseInt(dateParts[1]);
         int day = Integer.parseInt(dateParts[2]);
         return LocalDate.of(year, month, day);
+    }
+
+    public void insertMovie(Movie movie) {
+        movies.add(movie);
+    }
+
+    public void persist() {
+        
+    }
+
+    String toString(Movie movie) {
+        StringBuilder strb = new StringBuilder();
+
+        strb.append(movie.getTitle());
+        strb.append("|");
+
+        strb.append(movie.getGenre().name());
+        strb.append("|");
+
+        strb.append(toString(movie.getReleaseDate()));
+        strb.append("|");
+
+        strb.append(movie.getDesc());
+
+        return strb.toString();
+    }
+
+    private String toString(LocalDate date) {
+        StringBuilder strb = new StringBuilder();
+        strb.append(date.getYear());
+        strb.append(",");
+        strb.append(date.getMonthValue());
+        strb.append(",");
+        strb.append(date.getDayOfMonth());
+        return strb.toString();
     }
 }

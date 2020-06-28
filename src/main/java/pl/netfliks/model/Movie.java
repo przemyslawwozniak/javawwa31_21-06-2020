@@ -1,6 +1,7 @@
 package pl.netfliks.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Movie {
 
@@ -30,5 +31,21 @@ public class Movie {
 
     public String getDesc() {
         return desc;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Movie movie = (Movie) o;
+        return Objects.equals(title, movie.title) &&
+                genre == movie.genre &&
+                Objects.equals(releaseDate, movie.releaseDate) &&
+                Objects.equals(desc, movie.desc);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, genre, releaseDate, desc);
     }
 }
